@@ -1,0 +1,47 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint-config-prettier",
+    "plugin:typescript-enum/recommended",
+  ],
+  "plugins": ["simple-import-sort"],
+  "settings": {
+    "react": {
+      "version": "detect",
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+  },
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "^_",
+      },
+    ],
+    "import/named": ["off"],
+    "import/no-unresolved": ["off"],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "@typescript-eslint/no-explicit-any": ["error"],
+    "typescript-enum/no-enum": ["error"],
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
+  },
+}
